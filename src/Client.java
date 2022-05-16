@@ -3,7 +3,7 @@ import java.awt.event.*;
 import java.io.IOException;
 import java.net.Socket;
 
-public class Main {
+public class Client {
     public static void main(String[] args) throws IOException {
         String ip = "localhost";
         int port = 5432;
@@ -13,6 +13,16 @@ public class Main {
 }
 
 class Login extends Frame {
+    Label titleLabel = new Label("Login");
+
+
+    Login() {
+        this.setTitle("Login");
+
+    }
+}
+
+class Register {
 
 }
 
@@ -21,8 +31,8 @@ class ChooseTable {
 }
 
 class ChessGame extends Frame {
-    ChessBoard b = new ChessBoard( );
-    public ChessGame( ) {
+    ChessBoard b = new ChessBoard();
+    public ChessGame() {
         setBackground(Color.lightGray);
         setLayout(new BorderLayout());
         add("Center", b);
@@ -41,7 +51,7 @@ class ChessGame extends Frame {
 class ChessBoard extends Canvas {
     int[][] chess = new int[19][19];
     int sx = 20, sy = 20;
-    int w = 20;
+    int w = 30;
     int cx = 50;
     int cy = 50;
     int player = 1;
@@ -59,7 +69,7 @@ class ChessBoard extends Canvas {
         });
         this.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
-                Graphics g = getGraphics( );
+                Graphics g = getGraphics();
                 if (chess[(cx - sx)/w][(cy - sy)/w] == 0)
                     if (player == 1) {
                         g.setColor(Color.black);
