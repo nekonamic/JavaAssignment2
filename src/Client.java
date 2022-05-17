@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
@@ -12,25 +13,40 @@ public class Client {
     }
 }
 
-class Login extends Frame {
-    Label titleLabel = new Label("Login");
-
-
-    Login() {
-        this.setTitle("Login");
+class GUI extends JFrame {
+    GUI() {
+        this.setLayout(new CardLayout());
 
     }
 }
 
-class Register {
+class Login extends JPanel {
+    private JTextField account = new JTextField();
+    private JTextField password = new JTextField();
+    private JButton login = new JButton("Login");
+    private JButton register = new JButton("Register");
+
+    Login() {
+        this.setLayout(new GridLayout(4, 1));
+        this.add(account);
+        this.add(password);
+        this.add(login);
+        this.add(register);
+
+        login.addActionListener(e -> );
+        register.addActionListener(e -> );
+    }
+}
+
+class Register extends JPanel {
 
 }
 
-class ChooseTable {
+class ChooseTable extends JPanel {
 
 }
 
-class ChessGame extends Frame {
+class ChessGame extends JPanel {
     ChessBoard b = new ChessBoard();
     public ChessGame() {
         setBackground(Color.lightGray);
